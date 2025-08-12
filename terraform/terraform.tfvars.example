@@ -1,0 +1,21 @@
+# AWS Configuration
+aws_region = "us-east-1"
+
+# S3 Bucket Configuration
+bucket_name = "edson-personal-website-unique-name"
+
+# Domain Configuration (optional)
+# Leave domain_name empty to use CloudFront domain only
+# domain_name = "yourdomain.com"
+domain_name = ""
+
+# Environment
+environment = "production"
+
+# Additional Tags
+tags = {
+  Project     = "Personal Website"
+  Owner       = "Edson da Silva"
+  Environment = "production"
+  CreatedBy   = "Terraform"
+}
