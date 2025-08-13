@@ -1,3 +1,4 @@
+
 # Edson da Silva - Personal Website
 
 A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript, featuring a complete Python-based development stack and deployed on AWS using Terraform for Infrastructure as Code.
@@ -442,3 +443,7 @@ Feel free to fork this project and customize it for your own use!
 ---
 
 **Built with ❤️ by Edson da Silva**
+=======
+# personal-website
+Professional personal portfolio website with modern dark mode, responsive design, and AWS deployment ready. Built with HTML5, CSS3, JavaScript, Python, and Terraform.
+>>>>>>> 5326546da29a429a3ca8e986046ea50ea31fe867
