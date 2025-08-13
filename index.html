@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edson da Silva - Software Developer & AWS Cloud Architect</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="themeIcon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Edson da Silva</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Hi, I'm Edson da Silva</h1>
+                <p class="subtitle">Software Developer & AWS Cloud Architect</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="#projects" class="btn secondary">View Projects</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a passionate software developer with expertise in modern web technologies and cloud infrastructure. I specialize in creating scalable applications using Python, JavaScript, and AWS services. My approach combines clean code practices with robust DevOps methodologies to deliver high-quality solutions.</p>
+                    <p>When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, and sharing knowledge with the developer community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h3>Python</h3>
+                    <p>Django, Flask, FastAPI</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-js-square"></i>
+                    <h3>JavaScript</h3>
+                    <p>React, Node.js, TypeScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-aws"></i>
+                    <h3>AWS Cloud</h3>
+                    <p>EC2, S3, Lambda, CloudFront</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Databases</h3>
+                    <p>PostgreSQL, MongoDB, Redis</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-docker"></i>
+                    <h3>DevOps</h3>
+                    <p>Docker, Terraform, CI/CD</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Version Control</h3>
+                    <p>Git, GitHub, GitLab</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Personal Website</h3>
+                    <p>Modern responsive website with Python development stack and AWS deployment using Terraform.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>AWS</span>
+                        <span>Terraform</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Scalable cloud architecture with automated deployment pipelines and monitoring.</p>
+                    <div class="project-tech">
+                        <span>AWS</span>
+                        <span>Docker</span>
+                        <span>CI/CD</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Web Application</h3>
+                    <p>Full-stack web application with modern frontend and robust backend architecture.</p>
+                    <div class="project-tech">
+                        <span>React</span>
+                        <span>Python</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                    <a href="#" class="project-link">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://linkedin.com/in/edsondasilva" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/msg4edson" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/edsondasilva" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p>&copy; 2025 Edson da Silva. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

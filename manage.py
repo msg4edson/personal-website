@@ -33,7 +33,7 @@ def setup(force):
 @click.option('--no-browser', is_flag=True, help='Don\'t open browser automatically')
 def dev(host, port, no_reload, no_browser):
     """Start the development server with live reload."""
-    click.echo("🖥️  Starting development server...")
+    click.echo("Starting development server...")
     cmd = [sys.executable, 'dev_server.py', '--host', host, '--port', str(port)]
     if no_reload:
         cmd.append('--no-reload')
@@ -47,7 +47,7 @@ def dev(host, port, no_reload, no_browser):
 @click.option('--html', is_flag=True, help='Generate HTML report')
 def test(verbose, coverage, html):
     """Run the test suite."""
-    click.echo("🧪 Running tests...")
+    click.echo("Running tests...")
     cmd = ['pytest']
     if verbose:
         cmd.append('-v')
@@ -62,7 +62,7 @@ def test(verbose, coverage, html):
 @click.option('--build', '-b', default='dist', help='Build directory')
 def build(source, build):
     """Build and optimize the website for production."""
-    click.echo("🏗️  Building website...")
+    click.echo("Building website...")
     subprocess.run([sys.executable, 'build.py', '--source', source, '--build', build])
 
 @cli.command()
@@ -75,7 +75,7 @@ def build(source, build):
 @click.option('--region', '-r', help='AWS region')
 def deploy(action, bucket_name, domain_name, region):
     """Deploy to AWS infrastructure."""
-    click.echo(f"☁️  Running deployment action: {action}")
+    click.echo(f"Running deployment action: {action}")
     cmd = [sys.executable, 'deploy.py', '--action', action]
     if bucket_name:
         cmd.extend(['--bucket-name', bucket_name])
@@ -88,7 +88,7 @@ def deploy(action, bucket_name, domain_name, region):
 @cli.command()
 def clean():
     """Clean build artifacts and temporary files."""
-    click.echo("🧹 Cleaning project...")
+    click.echo("Cleaning project...")
     
     # Directories to clean
     clean_dirs = ['dist', 'build', '__pycache__', '.pytest_cache', 'tests/reports']
@@ -98,29 +98,29 @@ def clean():
         if dir_path.exists():
             import shutil
             shutil.rmtree(dir_path)
-            click.echo(f"🗑️  Removed: {dir_name}")
+            click.echo(f"Removed: {dir_name}")
     
     # Files to clean
     clean_patterns = ['*.pyc', '*.pyo', '*.log']
     for pattern in clean_patterns:
         for file_path in Path('.').rglob(pattern):
             file_path.unlink()
-            click.echo(f"🗑️  Removed: {file_path}")
+            click.echo(f"Removed: {file_path}")
     
-    click.echo("✅ Cleanup completed")
+    click.echo("Cleanup completed")
 
 @cli.command()
 def status():
     """Show project status and information."""
-    click.echo("📊 Project Status")
+    click.echo("Project Status")
     click.echo("=" * 30)
     
     # Check virtual environment
     venv_path = Path('venv')
     if venv_path.exists():
-        click.echo("✅ Virtual environment: Ready")
+        click.echo("[OK] Virtual environment: Ready")
     else:
-        click.echo("❌ Virtual environment: Not found")
+        click.echo("[MISSING] Virtual environment: Not found")
     
     # Check key files
     key_files = [
@@ -131,27 +131,27 @@ def status():
         'requirements.txt'
     ]
     
-    click.echo("\n📁 Key Files:")
+    click.echo("\nKey Files:")
     for file_path in key_files:
         if Path(file_path).exists():
-            click.echo(f"✅ {file_path}")
+            click.echo(f"[OK] {file_path}")
         else:
-            click.echo(f"❌ {file_path}")
+            click.echo(f"[MISSING] {file_path}")
     
     # Check dependencies
     try:
         import boto3, flask, pytest
-        click.echo("\n📦 Dependencies: Ready")
+        click.echo("\n[OK] Dependencies: Ready")
     except ImportError:
-        click.echo("\n❌ Dependencies: Missing (run: python manage.py setup)")
+        click.echo("\n[MISSING] Dependencies: Missing (run: python manage.py setup)")
     
     # Check AWS credentials
     try:
         import boto3
         boto3.client('sts').get_caller_identity()
-        click.echo("☁️  AWS Credentials: Configured")
+        click.echo("[OK] AWS Credentials: Configured")
     except:
-        click.echo("❌ AWS Credentials: Not configured")
+        click.echo("[NOT CONFIGURED] AWS Credentials: Not configured")
 
 @cli.command()
 def info():

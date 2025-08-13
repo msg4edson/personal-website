@@ -74,27 +74,27 @@ class DevServer:
             return send_file('index.html')
     
     def run_with_livereload(self):
-        """Run the development server with live reload."""
-        server = Server(self.app)
-        
-        # Watch HTML files
-        server.watch('*.html')
-        server.watch('css/*.css')
-        server.watch('js/*.js')
-        
-        print(f"🚀 Development server starting...")
-        print(f"📍 Local: http://{self.host}:{self.port}")
-        print(f"🔄 Live reload enabled")
-        print(f"👀 Watching: {', '.join(self.watch_dirs)}")
-        print(f"⏹️  Press Ctrl+C to stop")
+        """Run the development server with live reload using Flask's built-in reloader."""
+        print(f"Development server starting...")
+        print(f"Local: http://{self.host}:{self.port}")
+        print(f"Live reload enabled")
+        print(f"Watching: {', '.join(self.watch_dirs)}")
+        print(f"Press Ctrl+C to stop")
         
         # Open browser automatically
         threading.Timer(1.0, lambda: webbrowser.open(f'http://{self.host}:{self.port}')).start()
         
         try:
-            server.serve(host=self.host, port=self.port, debug=False)
+            # Use Flask's built-in development server with reloader
+            self.app.run(
+                host=self.host, 
+                port=self.port, 
+                debug=True, 
+                use_reloader=True,
+                use_debugger=True
+            )
         except KeyboardInterrupt:
-            print("\n👋 Development server stopped")
+            print("\nDevelopment server stopped")
     
     def run_simple(self):
         """Run a simple Flask development server."""
